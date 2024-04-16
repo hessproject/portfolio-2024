@@ -1,7 +1,7 @@
 ---
 import Photo from "./Photo.astro";
 
-const imageModules = await import.meta.glob('../assets/photography/*');
+const imageModules = import.meta.glob('../assets/photography/*');
 const images = await Promise.all(Object.values(imageModules).map(importFn => importFn()));
 ---
 <div class="photography-container m-5 border-black border-4 rounded-md shadow-black shadow-lg bg-white">
