@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import portrait from "../assets/img/portrait.jpeg";
 import Paragraph from "./AboutParagraph.astro";
 ---
-<div class="about-container mx-5 mt-5 mb-14 grid grid-cols-3 items-center rounded-md border-black border-4 bg-white shadow-black shadow-lg">
+<div class="about-container min-w-min mx-5 mt-5 mb-14 grid grid-cols-3 items-center rounded-md border-black border-4 bg-white shadow-black shadow-lg">
     <div class="about-image col-span-3 md:col-span-1 p-5 mx-auto">
         <Image src={portrait} width="600" height="600" alt="Nick Hess" class="rounded-md border-black border-4" />
     </div>
