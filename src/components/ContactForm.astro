@@ -14,34 +14,34 @@
 </div>
 
 <script>
-    import emailjs from '@emailjs/browser'
-    window.onload = function() {
-            emailjs.init({
-              publicKey: 'zB2S6YhfIovzRCaUq',
-            });
-            document.getElementById('contact-form')?.addEventListener('submit', function(event) {
-                event.preventDefault();
-                const statusElement = document.getElementById('status');
-                if (statusElement) {
-                    statusElement.textContent = 'Sending...';
-                }
-                // these IDs from the previous steps
-                const formElement = document.getElementById('contact-form') as HTMLFormElement;
-                emailjs.sendForm('contact_service', 'contact_form', formElement)
-                    .then(() => {
-                        const statusElement = document.getElementById('status');
-                        if (statusElement) {
-                            statusElement.textContent = 'Email sent successfully!';
-                            statusElement.classList.add('m-5');
-                        }
-                        const contactForm = document.getElementById('contact-form') as HTMLFormElement;
-                        contactForm?.reset();
-                    }, (error: any) => {
-                        const statusElement = document.getElementById('status');
-                        if(statusElement) {
-                            statusElement.textContent = 'Something went wrong! Please try again.'
-                        }
-                    });
-            });
-        }
+    window.onload = async function() {
+        const emailjs = (await import('@emailjs/browser')).default;
+        emailjs.init({
+            publicKey: 'zB2S6YhfIovzRCaUq',
+        });
+        const formElement = document.getElementById('contact-form');
+        formElement?.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const statusElement = document.getElementById('status');
+            if (statusElement) {
+                statusElement.textContent = 'Sending...';
+            }
+            // these IDs from the previous steps
+            emailjs.sendForm('contact_service', 'contact_form', formElement as HTMLFormElement)
+                .then(() => {
+                    const statusElement = document.getElementById('status');
+                    if (statusElement) {
+                        statusElement.textContent = 'Email sent successfully!';
+                        statusElement.classList.add('m-5');
+                    }
+                    const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+                    contactForm?.reset();
+                }, (error) => {
+                    const statusElement = document.getElementById('status');
+                    if(statusElement) {
+                        statusElement.textContent = 'Something went wrong! Please try again.'
+                    }
+                });
+        });
+    }
 </script>
