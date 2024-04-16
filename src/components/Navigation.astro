@@ -29,10 +29,12 @@
     </div>
 </nav>
 <script>
-    const navbar = document.getElementById('navbar');
-    const hamburger = document.getElementById('hamburger');
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
 
-    hamburger?.addEventListener('click', () => {
-        navbar?.classList.toggle('hidden');
+        hamburger?.addEventListener('click', () => {
+            navbar?.classList.toggle('hidden');
+        });
     });
 </script>
