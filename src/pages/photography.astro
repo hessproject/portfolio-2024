@@ -1,0 +1,12 @@
+---
+import Heading from "../components/Heading.astro";
+import PhotographySection from "../components/PhotographySection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Photography"
+
+---
+<BaseLayout pageTitle={pageTitle}>
+    <Heading title={pageTitle} />
+    <PhotographySection />
+</BaseLayout>

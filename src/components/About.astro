@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../assets/img/portrait.jpeg";
+import Paragraph from "./AboutParagraph.astro";
+---
+<div class="about-container mx-5 mt-5 mb-14 grid grid-cols-3 items-center rounded-md border-black border-4 bg-white shadow-black shadow-lg">
+    <div class="about-image col-span-3 md:col-span-1 p-5 mx-auto">
+        <Image src={portrait} width="600" height="600" alt="Nick Hess" class="rounded-md border-black border-4" />
+    </div>
+    <div class="about-content col-span-3 md:col-span-2 rounded-md m-5">
+        <h1 class="text-2xl font-bold">Hi! I'm Nick</h1>
+        <Paragraph>I'm a passionate and driven professional with a unique blend of skills in software engineering, music production, and photography. With a background that blends technology with creativity, I strive to bring innovation to all my endeavors whether through coding, creating sound, or capturing moments.</Paragraph>
+        <Paragraph>Learn a little bit more about me below, check out my blog and creative work samples, or get in touch with me through the contact page, I am always happy to chat!</Paragraph>
+    </div>
+</div>

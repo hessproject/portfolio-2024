@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+const { skill } = Astro.props;
+---
+<div class="skill m-5 p-5 grid grid-cols-4 rounded-md border-black border-4 bg-white shadow-black shadow-lg">
+    <div class="image-container mx-auto col-span-4 md:col-span-1">
+        <Image src={skill.logo} alt={skill.groupName} height="80" width="80"/>
+    </div>
+    <div class="skill-content-container col-span-4 md:col-span-3 mx-2">
+        <h2 class="text-xl mb-2 font-bold">{skill.groupName}</h2>
+        <ul class="sm:columns-1 md:columns-2">
+            {skill.values.map((skill: string) => (
+                <li class="text-sm leading-6 text-gray-600">{skill}</li>
+            ))}
+        </ul>
+    </div>
+</div>

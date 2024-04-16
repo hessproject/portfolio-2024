@@ -1,0 +1,16 @@
+---
+import Heading from "./Heading.astro";
+import SoundcloudPlayer from "./SoundcloudPlayer.astro";
+
+---
+<div class="music-container m-5 rounded-md border-black border-4 shadow-black shadow-lg bg-white">
+    <div class="music-content-container p-5">
+        <p class="mb-5">With over a decade of experience in music production, primarily using Ableton Live, I've developed a deep understanding of sound design and audio engineering. My journey in music has taken me from the stages as a live performer, playing guitar and keyboards with multiple local bands, to the solitude of the studio where I create and release music as a solo electronic artist</p>
+        <p class="mb-5">Most recently, my passion lies in composing and producing music tailored for media — whether it's for films, video games, commercials, or digital content, I strive to create music that complements and enhances the visual narrative, carefully considering the emotional and contextual needs of each project</p>    
+        <p>Below are two playlists of music, the first containing media focused pieces ranging from driving action scenes to quiet piano reflections, and the second containing some of my solo electronic work</p>
+    </div>
+    <Heading title="Cinematic"/>
+    <SoundcloudPlayer playlistUrl="https://api.soundcloud.com/playlists/1740606177" title="Cinematic" setUrl="https://soundcloud.com/nick-hess-1/sets/cinematic" />
+    <Heading title="Electronic"/>
+    <SoundcloudPlayer playlistUrl="https://api.soundcloud.com/playlists/1740606267" title="Electronic" setUrl="https://soundcloud.com/nick-hess-1/sets/electronic" />
+</div>

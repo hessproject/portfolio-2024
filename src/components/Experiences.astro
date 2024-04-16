@@ -1,0 +1,54 @@
+---
+import Experience from "./Experience.astro"
+
+const experiences = [
+    {
+        title: 'Software Engineer II',
+        company: 'Amazon',
+        location: 'Los Angeles, CA and Tokyo, JP',
+        date: '05/2020-Present',
+        description: 'Building various software for Amazon Advertising, Amazon Studios, and JP Seller Services'
+    },
+    {
+        title: 'Senior Software Engineer',
+        company: 'Currency',
+        location: 'Los Angeles, CA',
+        date: '11/2019-03/2020',
+        description: 'Built a payment processing platform for small businesses'
+    },
+    {
+        title: 'Senior Software Engineer',
+        company: 'Capital One',
+        location: 'New York, NY',
+        date: '12/2018-12/2019',
+        description: 'Built credit decision software for the commercial banking division'
+    },
+    {
+        title: 'Software Engineer',
+        company: 'JP Morgan Chase (Contract)',
+        location: 'New York, NY',
+        date: '02/2018-11/2018',
+        description: 'Built YouInvest by JP Morgan'
+    },
+    {
+        title: 'Software Engineer',
+        company: 'Vibrant! Emotional Health',
+        location: 'New York, NY',
+        date: '04/2017-02/2018',
+        description: 'Built software and infrastructure for National Suicide Lifeline and NYC Well'
+    },
+    {
+        title: 'Software Engineer',
+        company: 'Spotible',
+        location: 'New York, NY',
+        date: '02/2016-12/2016',
+        description: 'Built interactive ad creatives for high traffic website brands'
+    }
+]
+
+---
+<div class="experiences-container grid lg:grid-cols-3 sm:grid-cols-2 mb-14">
+{experiences.map((experience) => 
+    <Experience {...experience} />
+)}
+</div>

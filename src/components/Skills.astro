@@ -1,0 +1,49 @@
+---
+import Skill from "./Skill.astro"
+
+import languagesLogo from "../assets/img/coding.gif"
+import librariesLogo from "../assets/img/frameworks.gif"
+import toolsLogo from "../assets/img/tools.gif"
+import gameEnginesLogo from "../assets/img/gaming.gif"
+import databasesLogo from "../assets/img/database.gif"
+import otherLogo from "../assets/img/paint.gif"
+
+const skills = [
+    {
+        groupName: "Languages",
+        values: ["Python", "Javascript", "Java", "C#"],
+        logo: languagesLogo
+    },
+    {
+        groupName: "Frameworks",
+        values: ["Django", "Spring", "React", "Angular", "Astro"],
+        logo: librariesLogo
+    },
+    {
+        groupName: "Tools",
+        values: ["Git", "Docker", "Jenkins", "Jira", "Confluence", "Postman"],
+        logo: toolsLogo
+    },
+    {
+        groupName: "Game Engines",
+        values: ["Unity", "Godot"],
+        logo: gameEnginesLogo
+    },
+    {
+        groupName: "Databases",
+        values: ["SQL", "NoSQL"],
+        logo: databasesLogo
+    },
+    {
+        groupName: "Others",
+        values: ["AWS", "HTML", "CSS", "Figma", "Adobe Suite"],
+        logo: otherLogo
+    }
+]
+---
+
+<div class="skills-container grid sm:grid-cols-2 lg:grid-cols-3 text-center mb-14">
+    {skills.map((skill) =>
+        <Skill skill={skill} />
+    )}
+</div>

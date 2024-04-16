@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import Blogpost from "../components/Blogpost.astro";
+import Heading from "../components/Heading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("posts");
+const pageTitle = "Blog";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<Heading title="Recent Blog Posts"/>
+	<ul class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+		{allPosts.map((post) => 
+			<Blogpost url={`/posts/${post.slug}/`} frontmatter={post.data}/>
+		)}
+	</ul>
+</BaseLayout>

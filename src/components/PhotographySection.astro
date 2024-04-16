@@ -1,0 +1,15 @@
+---
+import Photo from "./Photo.astro";
+
+const imageModules = await import.meta.glob('../assets/photography/*');
+const images = await Promise.all(Object.values(imageModules).map(importFn => importFn()));
+---
+<div class="photography-container m-5 border-black border-4 rounded-md shadow-black shadow-lg bg-white">
+    <div class=" m-5 photography-content">
+        <p class="mb-5">Welcome to my world through the lens. Specializing in travel and landscape photography, my approach often involves playing with negative space, allowing the subjects to breathe. I am drawn to both symmetry and asymmetry, using these elements to bring a unique balance and to my compositions. While travel and landscapes are my primary focus, I also shoot portrait, street, and product photography.</p>
+        <p class="mb-5">Collaboration is key to my creative process, working alongside other photographers and videographers to tell visual stories. I am always open to collaborations and am adaptable for any of your photography project needs</p>
+    </div>
+    {images.map((image) =>
+        <Photo src={(image as any).default} />
+    )}
+</div>

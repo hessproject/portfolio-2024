@@ -1,0 +1,29 @@
+---
+import About from "../components/About.astro"
+import Experiences from "../components/Experiences.astro"
+import Heading from "../components/Heading.astro"
+import Hero from "../components/Hero.astro"
+import Projects from "../components/Projects.astro"
+import Skills from "../components/Skills.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+const pageTitle = "Home"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+		<Hero />
+		
+		<Heading title="About Me" />
+		<About />
+
+		<Heading title="My Experience" />
+		<Experiences />
+
+		<Heading title="My Skills" />
+		<Skills />
+
+		<Heading title="Notable Projects" />
+		<Projects />
+
+</BaseLayout>

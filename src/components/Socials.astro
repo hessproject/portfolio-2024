@@ -1,0 +1,42 @@
+---
+import githubIcon from '../assets/img/github.png';
+import soundcloudIcon from '../assets/img/soundcloud.png';
+import linkedinIcon from '../assets/img/linkedin.png';
+import instagramIcon from '../assets/img/instagram.png';
+import emailIcon from '../assets/img/email.png';
+import Social from './Social.astro';
+
+const socials = [
+    {
+        name: "github",
+        icon: githubIcon,
+        url: "http://github.com/hessproject"
+    },
+    {
+        name: "linkedin",
+        icon: linkedinIcon,
+        url: "http://linkedin.com/in/hessproject"
+    },
+    {
+        name: "soundcloud",
+        icon: soundcloudIcon,
+        url: "http://soundcloud.com/nick-hess-1"
+    },
+    {
+        name: "instagram",
+        icon: instagramIcon,
+        url: "http://instagram.com/nhess.photography"
+    },
+    {
+        name: "email",
+        icon: emailIcon,
+        url: "mailto:hessproject@gmail.com"
+    }
+]
+---
+
+<div class="socials-container grid grid-cols-5 m-5 place-items-center">
+    {socials.map((social) => 
+        <Social {...social} />
+    )}
+</div>

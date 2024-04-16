@@ -1,0 +1,7 @@
+---
+import { Image } from "astro:assets";
+const { src } = Astro.props;
+---
+<div class="photo-container m-5 rounded-md border-black border-4">
+    <Image src={src} alt="Photo" class="photo w-full" style={{ display: 'block' }}/>
+</div>

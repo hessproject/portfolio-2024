@@ -1,0 +1,9 @@
+---
+import { Image } from "astro:assets";
+const { name, icon, url } = Astro.props
+---
+<a href={url} target="_blank">
+    <div class="social-container border-4 border-black rounded-md bg-white hover:bg-slate-200 p-2 shadow-black shadow-lg">
+        <Image src={icon} alt={name} width="50" height="50"/>
+    </div>
+</a>

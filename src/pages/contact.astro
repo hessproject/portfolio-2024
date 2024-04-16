@@ -1,0 +1,13 @@
+---
+import ContactForm from "../components/ContactForm.astro";
+import Heading from "../components/Heading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Contact Me"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <Heading title={pageTitle}/>
+    <ContactForm />
+
+</BaseLayout>

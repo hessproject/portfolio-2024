@@ -1,0 +1,42 @@
+---
+---
+<div class="contact-container m-5 px-5 pt-5 grid rounded-md bg-white border-4 border-black shadow-black shadow-lg">
+    <form id="contact-form" class="grid gap-4">
+        <label>Name</label>
+        <input class="m-5 h-10 rounded-md border-black border-4" type="text" name="user_name">
+        <label>Email</label>
+        <input class="m-5 h-10 rounded-md border-black border-4" type="email" name="user_email">
+        <label>Message</label>
+        <textarea class="m-5 h-40 rounded-md border-black border-4" name="message"></textarea>
+        <input class="m-5 h-10 rounded-md border-black border-4 hover:bg-slate-200" type="submit" value="Send">
+    </form>
+    <p id="status"></p>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "zB2S6YhfIovzRCaUq",
+            });
+        })();
+</script>
+<script>
+    window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                document.getElementById('status').textContent = 'Sending...';
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                
+                    .then(() => {
+                        document.getElementById('status').textContent = 'Email sent successfully!';
+                        document.getElementById('status').classList.add('m-5');
+                        document.getElementById('contact-form').reset();
+                    }, (error) => {
+                        document.getElementById('status').textContent = 'Something went wrong! Please try again.'
+                    });
+            });
+        }
+</script>

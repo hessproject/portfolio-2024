@@ -1,0 +1,11 @@
+---
+import Heading from "../components/Heading.astro";
+import MusicSection from "../components/MusicSection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Music"
+---
+<BaseLayout pageTitle={pageTitle}>
+  <Heading title={pageTitle}/>
+  <MusicSection />
+</BaseLayout>

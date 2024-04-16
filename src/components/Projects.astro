@@ -1,0 +1,35 @@
+---
+import Project from "./Project.astro";
+
+const projects = [
+    {
+        name: "Amazon 3P Points",
+        description: "Amazon 3P Points is a loyalty program that allows customers to earn redeemable points on purchases from third party sellers on Amazon Japan, as well as providing tools for sellers to help grow their business",
+    },
+    {
+        name: "Amazon Studio in the Cloud",
+        description: "Studio in the Cloud is a one stop AWS-based service designed to address the full lifecycle needs of Amazon Studio's content makers including work ordering, content storage, and creation"
+    },
+    {
+        name: "JP Morgan Self-Directed Investing",
+        description: "JP Morgan Self-Directed Investing (formerly YouInvest by JP Morgan) is a self-directed account that allows customers to take full control of their investments whether they are new to investing or experienced traders",
+    },
+    {
+        name: "Credit Decision Analysis Tool",
+        description: "The CDAT is an internal tool used by Capital One to assess risk and make credit decisions regarding large commercial clients, taking into account a variety of factors including financials and market conditions",
+    },
+    {
+        name: "NYC 988",
+        description: "NYC 988 (formerly NYC Well) is a city funded platform that provides free access to mental health and substance abuse support and resources for New Yorkers"
+    },
+    {
+        name: "988 Suicide & Crisis Lifeline",
+        description: "The 988 Suicide & Crisis Lifeline (formerly National Suicide Lifeline) is a nationally sponsored program that operates a network of local crisis centers to assist people in emotional distress",
+    }
+];
+---
+<div class="projects-container grid md:grid-cols-2 lg:grid-cols-3 mb-14">
+    {projects.map((project) =>
+        <Project project={project} />
+    )}
+</div>
